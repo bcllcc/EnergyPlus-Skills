@@ -3,10 +3,12 @@
 一个面向 EnergyPlus 工作流的 Agent Skill，提供从 IDF 编辑、仿真执行、输出解析到校准与参数化研究的完整工程化能力。
 
 本 Skill 的核心目标是：
-- 提供可复用的 SOP（而不是一次性 prompt）
+- 提供可复用的 SOP
 - 将高频且确定性的操作沉淀为脚本
 - 在不同开发机上尽可能自动发现 EnergyPlus 安装路径
 - 支持手动覆盖路径，降低“环境差异导致不可用”的风险
+
+**风险提示：使用前请做好IDF文件备份**
 
 ---
 
@@ -298,27 +300,14 @@ python scripts/run_simulation.py --check-env
 
 ---
 
-## 11. 安全与开源发布建议
-
-- 不要提交 `__pycache__/` 与本机缓存
-- 不要在代码中写死个人路径
-- 不要提交任何密钥、令牌、私有数据文件
-- 发布前建议做一次扫描：
-
-```bash
-rg -n --hidden "C:\\\\Users|api[_-]?key|secret|token|password|__pycache__" .
-```
-
----
-
-## 12. 与官方文档的关系
+## 1. 与官方文档的关系
 
 本 Skill 用于工程流程编排与工具封装，不替代 EnergyPlus 官方规范。  
 涉及 API 行为、参数细节、边界条件时，应以官方文档为准
 
 ---
 
-## 13. License
+## 12. License
 
 本项目已采用 MIT 许可证，详见仓库根目录的 [`LICENSE`](./LICENSE) 文件。  
 当前许可证版权声明为：`Copyright (c) 2026 杨家文`。
